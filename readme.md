@@ -11,6 +11,8 @@ python_jim/  "C:\E\code\python_jim"文件夹
     /readme.md  su.起点 即本txt文件
 ```
 
+标注重点文件 [nplz-0922.md.txt](/data/fileup/nplz-0922.md.txt)
+
 
 2. 是什么？做什么？
 ------------------------
@@ -52,6 +54,7 @@ python_jim/  "C:\E\code\python_jim"文件夹
 ```
 [2024-11-29] Jim 初始化python_jim文件夹
 [2024-12-25] Jim 第一次发布到github、gitee
+[2024-12-25] Jim 标注应该重点文件
 
 ```
 
