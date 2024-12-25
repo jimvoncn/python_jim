@@ -1,0 +1,81 @@
+13. Git.exe.txt
+========================
+"Friday December 20 2024 19:03:10 GMT+0800 (China Standard Time)"
+
+
+fir
+------------------------
+介绍一个新朋友：Git软件的使用
+
+亲贤臣：
+    编程类：cmd powershell python, Java js C++
+    工具类：vscode everything 画图 Excel 浏览器 git PuTTY
+    网页：stackoverflow.com github.com bing.com
+        csdn.net zhihu.com baidu.com fanyi.baidu.com hao.360.com
+
+远小人：
+    360安全卫士、腾讯管家、搜狗输入法、写字板、Word、ppt、Visio、OneDrive、sharepoint、gitee.com、、
+
+
+Git是什么、怎么用
+------------------------
+在浏览器只能下载文件夹的压缩包
+有了git就可以直接下载文件夹
+
+不推荐：浏览器手动：https://gitee.com/jimvoncn/python_jim
+    先注册登录、验证码
+    点下载
+    另存为"C:\E\code\python_jim.zip"
+
+推荐：安装git软件后在cmd命令行界面执行(不用登录)：
+    cd "C:\E\code"
+    git clone https://gitee.com/jimvoncn/python_jim
+
+<<恭喜你毕业了！>>
+
+
+
+
+深入：git是芬兰计算机科学家Linux大佬创造的Git版本控制技术
+------------------------
+现在都用git版本控制，
+之前很多人用SVN版本控制，所以git比SVN好。
+
+
+git的使用步骤：
+    1. 下载安装配置git软件：https://git-scm.com/downloads/win
+        下载慢死，考虑国内镜像 https://mirrors.tuna.tsinghua.edu.cn/ 的git-for-windows
+        配置，安装的时候打勾就可以了
+    2. 针对"C:\E\code\python_jim"文件夹
+        手动创建空文件夹python_jim
+        邀请git管理的cmd命令行：git init
+        --> 然后3个月后就可以对比差异和回滚到昨天中午、三个月前的某天提交的python_jim文件夹的状态
+    3. git命令行
+        官方文档：file:///C:/E/Git/mingw64/share/doc/git-doc/
+        Git-Cheat-Sheet：见(/data/fileup/Git-Cheat-Sheet.png) 或直接在浏览器搜
+
+
+cmd命令行脚本代码--能用就行：
+```powershell
+cd "C:\E\code"
+git clone https://gitee.com/jimvoncn/python_jim  #从远程到本地
+
+cd "python_jim"
+git init
+
+git add .
+git commit -m "[2024-12-20]Jim 新增git软件的使用说明"
+
+git push https://gitee.com/jimvoncn/python_jim master:master  #从本地到远程(须认证)
+
+git archive --format=zip --output="./committedFolder.zip" HEAD
+```
+
+
+更深入：分支、版本
+------------------------
+TODO 其实我也不懂
+
+
+
+

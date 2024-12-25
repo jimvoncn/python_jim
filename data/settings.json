@@ -1,0 +1,118 @@
+{
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "black-formatter.args": [
+        "--skip-string-normalization",
+        "--line-length",
+        "100"
+    ],
+    "files.autoSave": "afterDelay",
+    "editor.codeActionsOnSave": null,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "java.dependency.refreshDelay": 200,
+    "java.completion.guessMethodArguments": true,
+    "editor.quickSuggestions": null,
+    "workbench.editorAssociations": {
+        "{hexdiff}:/**/*.*": "hexEditor.hexedit",
+        "*.ipynb": "jupyter-notebook",
+        "*.lnk": "ink.connector"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.fontLigatures": null,
+    "workbench.tree.indent": 12,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.fontSize": 12,
+    "workbench.colorTheme": "Visual Studio Light",
+    "editor.accessibilitySupport": "off",
+    "diffEditor.wordWrap": "on",
+    "editor.wordWrap": "on",
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?？、，。！“”：；（）【】-　——",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "redhat.telemetry.enabled": true,
+    "json.maxItemsComputed": 500000,
+    "editor.semanticTokenColorCustomizations": {
+        "[Default Dark+]": {
+            "rules": {
+                "property.mandatory:xml": {
+                    "bold": true
+                },
+                "string.i18n:xml": {
+                    "italic": true
+                }
+            }
+        },
+        "[Default Light+]": {
+            "rules": {
+                "property.mandatory:xml": {
+                    "bold": true
+                },
+                "string.i18n:xml": {
+                    "italic": true
+                }
+            }
+        },
+        "[Default High Contrast]": {
+            "rules": {
+                "property.mandatory:xml": {
+                    "bold": true
+                },
+                "string.i18n:xml": {
+                    "italic": true
+                }
+            }
+        }
+    },
+    "files.defaultLanguage": "text/plain",
+    "files.autoSaveDelay": 200,
+    "chEmpty": true,
+    "searchText": "返回",
+    "chState": true,
+    "chEmptyLocalTransl": true,
+    "chEmptyBingTransl": true,
+    "editor.foldingMaximumRegions": 50000,
+    "vscodeGoogleTranslate.preferredLanguage": "Chinese (Simplified)",
+    "go.toolsEnvVars": {},
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "gitlens.gitCommands.search.showResultsInSideBar": false,
+    "workbench.layoutControl.enabled": false,
+    "terminal.integrated.tabFocusMode": true,
+    "editor.suggest.selectionMode": "never",
+    "workbench.colorCustomizations": {},
+    "cSpell.enabled": false,
+    "editor.guides.highlightActiveIndentation": false,
+    "indentRainbow.ignoreLinePatterns": [
+        "/[ \t]* [*]/g",
+        "/[ \t]+[/]{2}/g"
+    ],
+    "indentRainbow.errorColor": "",
+    "git.openRepositoryInParentFolders": "never",
+    "json.indent": "4",
+    "window.commandCenter": false,
+    "read-aloud-text.speed": 2,
+    "accessibility.voice.speechLanguage": "zh-CN",
+    "read-aloud-text.voice": "zh_CN",
+    "git.enableSmartCommit": true,
+    "xml.format.splitAttributesIndentSize": 4,
+    "editor.detectIndentation": false,
+    "files.associations": {
+        "*.txt": "plaintext"
+    },
+    "editor.fontFamily": "Consolas, 'Fira Code', 'Courier New', monospace",
+    "editor.dragAndDrop": false,
+    // "editor.scrollbar.scrollByPage": true,
+    "editor.occurrencesHighlight": "off"
+}

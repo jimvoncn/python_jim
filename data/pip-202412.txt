@@ -1,0 +1,79 @@
+
+1. python pip依赖包
+默认安装到这个文件夹："C:\D\python\python312\Lib\site-packages"
+
+入口1.双击运行文件 "C:\WINDOWS\system32\cmd.exe"  俗称命令行：
+    在命令行窗口输入`pip install requests`并回车
+
+入口2.用powershell命令行软件也一样：
+```powershell
+pip install requests
+```
+
+入口3.在PyCharm、AnaConda软件里面的市场中搜索和安装。
+
+
+
+2. 核心这几个依赖包必须安装，(其他的依赖包按需安装、出问题再说)。
+# 核心：http客户端、服务器端、解析xml、html、excel、剪切板：
+pip install requests
+pip install tornado
+pip install html5lib
+pip install lxml
+pip install openpyxl
+pip install pyperclip
+
+
+
+3. -i https://pypi.tuna.tsinghua.edu.cn/simple 是使用国内镜像，不要也行。
+# 探测文件类型、字符集、计算机网络、模拟鼠标、键盘、win32系统、加密解密：
+pip install python-magic-bin
+pip install chardet
+pip install scapy
+pip install pynput
+pip install pyautogui
+pip install pywin32  -i https://pypi.tuna.tsinghua.edu.cn/simple
+python "C:\D\python\python312\Scripts\pywin32_postinstall.py" -install
+pip install cryptography
+
+# 数据挖掘、科学计算、PIL图片处理、pdf处理、人工智能处理：
+pip install pandas  -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install numpy
+pip install scipy
+pip install pillow
+pip install pypdf
+pip install  torch torchvision torchaudio  -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 可选：其他乱七八糟的机器学习pytorch与tensorflow的库：
+
+
+
+4. 顺便记一记vscode软件安装的插件
+书签 alefragnani.bookmarks
+二维码 asurance.vscode-qrcode
+文本文件对比 chekweitan.compare-view
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
+ms-python.black-formatter
+可选：待办事项标注 gruntfuggly.todo-tree
+可选：XML文件相关 dotjoshjohnson.xml
+可选：二进制文件相关 ms-vscode.hexeditor
+可选：http请求发送 humao.rest-client
+直接打开快捷方式 lowfront.vscode-windows-lnk
+
+查看我安装了哪些vscode插件：
+在vscode打开"C:\Users\jimvoncn\.vscode\extensions\extensions.json"
+搜"id"就可以看到所有插件的id
+--批量安装插件？？ 没必要
+
+
+5. 其他手动安装的pip依赖包：
+查看我安装了哪些pip依赖包的命令行
+```powershell
+pip list
+```
+--批量安装依赖包？？ 没必要
+
+
+

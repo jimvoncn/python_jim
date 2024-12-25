@@ -1,0 +1,370 @@
+{
+    // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+    // Placeholders with the same ids are connected.
+    // Example:
+    // "Print to console": {
+    // 	"scope": "javascript,typescript",
+    // 	"prefix": "log",
+    // 	"body": [
+    // 		"console.log('$1');",
+    // 		"$2"
+    // 	],
+    // 	"description": "Log output to console"
+    // }
+    "Print to console": {
+        "scope": "javascript,typescript",
+        "prefix": [
+            "log",
+            "co",
+            "con",
+            "cons"
+        ],
+        "body": [
+            "console.log('$1');",
+            "$2"
+        ],
+        "description": "Log output to console"
+    },
+    "xmlHeader": {
+        "scope": "",
+        "prefix": [
+            "xml",
+            "<xml"
+        ],
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+            "$1"
+        ],
+        "description": "xmlHeader"
+    },
+    // 这是时间戳
+    "addTimestamp": {
+        "scope": "",
+        "prefix": "ts",
+        "body": [
+            "\"$CURRENT_DAY_NAME $CURRENT_MONTH_NAME $CURRENT_DATE $CURRENT_YEAR $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND GMT+0800 (China Standard Time)\"",
+        ],
+        "description": "add time stamp"
+    },
+    // 这是复活节岛石像
+    "template_man_head": {
+        "prefix": "h",
+        "body": [
+            "🗿🗿🗿"
+        ]
+    },
+    // 这是代码模板
+    "template_ack": {
+        "prefix": [
+            "ack"
+        ],
+        "body": [
+            "ACKnowledge"
+        ]
+    },
+    // 这是python3代码模板
+    "template_py": {
+        "prefix": "py",
+        "body": [
+            "#! /usr/bin/env python3",
+            "# -*-coding:utf-8 -*-",
+            "# @Created on   : \"$CURRENT_DAY_NAME $CURRENT_MONTH_NAME $CURRENT_DATE $CURRENT_YEAR $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND GMT+0800 (China Standard Time)\"",
+            "# @Author       : github.com/jimvoncn",
+            "# @File         : $TM_FILENAME",
+            "# @Description  : $TM_FILENAME_BASE",
+            "",
+            "",
+            "r\"\"\"",
+            "$TM_FILENAME",
+            "To do",
+            "",
+            "\"\"\"",
+            "",
+            "",
+            "import json",
+            "import os",
+            "import re",
+            "import shutil",
+            "import time",
+            "",
+            "",
+            "def main():",
+            "    \"\"\"",
+            "    @description To do",
+            "    @dependence  pip install chardet, pip install requests, ",
+            "    @param iv_file input file absolute path",
+            "    @param ev_file output file absolute path",
+            "    \"\"\"",
+            "    print(__doc__)",
+            "    print(\"<begin> time: \"+time.ctime())",
+            "############",
+            "    iv_file=\"\"",
+            "    ev_file=\"\"",
+            "############",
+            "    print(\"<end> time: \"+time.ctime())",
+            "",
+            "",
+            "#主程序入口",
+            "if (__name__==\"__main__\"):",
+            "    main()",
+            "    input(\"ENTER to exit...\")",
+            ""
+        ],
+        "description": "python3 template"
+    },
+    // 这是html5代码模板
+    "template_h5_3": {
+        "prefix": [
+            "html",
+            "html3"
+        ],
+        "body": [
+            "<!DOCTYPE html>",
+            "<!--",
+            "@Created on  : \"$CURRENT_DAY_NAME $CURRENT_MONTH_NAME $CURRENT_DATE $CURRENT_YEAR $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND GMT+0800 (China Standard Time)\"",
+            "@Author      : zorrow2017",
+            "@Description : html模板",
+            "To change this license header, choose License Headers in Project Properties.",
+            "To change this template file, choose Tools | Templates and open the template in the editor.",
+            "-->",
+            "<html lang=\"zh-Hans-CN\">",
+            "<head>",
+            "    <title>HTML模板</title>",
+            "    <meta charset=\"UTF-8\">",
+            "    <!-- <script src=\"http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js\"></script> -->",
+            "    <script type=\"text/javascript\">",
+            "        /**",
+            "         * 把函数内的任意变量引出",
+            "         * */",
+            "        var y = 0;",
+            "        /**",
+            "         * @var gv_init 防止重复初始化",
+            "         * */",
+            "        var gv_init = 0;",
+            "        //初始化",
+            "        jQuery(function ($) {",
+            "            console.log('jquery');",
+            "            init();",
+            "        });",
+            "",
+            "        function init() {",
+            "            /**",
+            "             * @param aa sfvsfsf",
+            "             * @description cssh",
+            "             * */",
+            "            if (gv_init >= 1) {",
+            "                gv_init += 1;",
+            "                return;",
+            "            } else {",
+            "                gv_init = 1;",
+            "            }",
+            "            //main",
+            "        }",
+            "    </script>",
+            "    <style type=\"text/css\">",
+            "        main {",
+            "            margin: 10px 10px 20px 3%;",
+            "        }",
+            "    </style>",
+            "    <meta name=\"description\" content=\"html模板\">",
+            "    <meta name=\"keywords\" content=\"temp\" />",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "</head>",
+            "<body onload=\"init()\">",
+            "    <noscript>",
+            "        怎么连JavaScript都没有？ <br /><br />",
+            "    </noscript>",
+            "",
+            "    <header></header>",
+            "",
+            "    <nav></nav>",
+            "",
+            "    <main>",
+            "        <article>",
+            "            ",
+            "        </article>",
+            "",
+            "        <br/><br/>",
+            "        <h2>&lt;html lang=\"zh-Hans-CN\"&gt;</h2>",
+            "        <article>",
+            "            <section>",
+            "                ",
+            "            </section>",
+            "            <section>",
+            "                cc",
+            "            </section>",
+            "        </article>",
+            "    </main>",
+            "",
+            "    <footer>",
+            "        <!-- <script src=\"https://cdn.staticfile.org/jquery/1.10.0/jquery.js\"></script>  -->",
+            "    </footer>",
+            "</body>",
+            "</html>",
+        ],
+        "description": "html5 template"
+    },
+    "java main template": {
+        "prefix": "javat",
+        "body": [
+            "import java.util.*;",
+            "",
+            "public class Test04{",
+            "\tpublic static void main(String[] args) {",
+            "\t\tSystem.out.println();",
+            "\t}",
+            "",
+            "}",
+            ""
+        ],
+        "description": "java main template"
+    },
+    "md head": {
+        "prefix": "md",
+        "body": [
+            "${TM_FILENAME}",
+            "========================",
+            "ts$0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "description": "java main template"
+    },
+    "tr": {
+        "prefix": "tr",
+        "body": [
+            "ABAP_$0_${CLIPBOARD}_${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}_Jim Feng",
+            "***********************************************************************",
+            "* 事务代码：                                                      *",
+            "* 程序名称： ZFIR009                                                     *",
+            "* 程序目的： ${CLIPBOARD}                                        *",
+            "* 设 计 人：                                                    *",
+            "* 开 发 人： DLW_JIM                                                   *",
+            "* 设计时间： ${CURRENT_YEAR}.${CURRENT_MONTH}.${CURRENT_DATE}                                                   *",
+            "* 程序类型:  report    ABAP/4 程序， 报表                                 *",
+            "* 描    述: <div>${CLIPBOARD}</div>                              *",
+            "*(修改日志)---------------------------------------------------------------*",
+            "* 日志号 修改人   修改时间 修改说明   传输号码                             *",
+            "* ------ ------   -------- ---------  ----------                      *",
+            "***********************************************************************",
+        ],
+        "description": "transmission request"
+    },
+    "24--": {
+        "prefix": "--",
+        "body": [
+            "------------------------"
+        ],
+        "description": "24--"
+    },
+    "24==": {
+        "prefix": "==",
+        "body": [
+            "========================"
+        ],
+        "description": "24=="
+    },
+    "24*-": {
+        "prefix": "*-",
+        "body": [
+            "*----------------------------------------------------------*"
+        ],
+        "description": "24=="
+    },
+    "email": {
+        "prefix": "em",
+        "body": [
+            "jimvoncn@163.com"
+        ],
+        "description": "email"
+    },
+    "email2": {
+        "prefix": "em2",
+        "body": [
+            "公司邮箱"
+        ],
+        "description": "f"
+    },
+    "file header": {
+        "prefix": [
+            "@c",
+            "@cr",
+            "@create",
+            "cre"
+        ],
+        "body": [
+            "#! /usr/bin/env text/plain",
+            "# -*-coding:utf-8 -*-",
+            "# @Created on   : \"$CURRENT_DAY_NAME $CURRENT_MONTH_NAME $CURRENT_DATE $CURRENT_YEAR $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND GMT+0800 (China Standard Time)\"",
+            "# @Author       : github.com/jimvoncn",
+            "# @Thanks to    : ",
+            "# @File         : $TM_FILENAME",
+            "# @Description  : $0",
+            "# ",
+            "",
+        ],
+        "description": "file header"
+    },
+    "wkx": {
+        "prefix": [
+            "我",
+            "wkx",
+            "我空闲"
+        ],
+        "body": [
+            "我空闲，$0还有什么任务吗"
+        ],
+        "description": "我空闲，"
+    },
+    "note": {
+        "prefix": [
+            "no",
+            "note",
+            "notes"
+        ],
+        "body": [
+            // "https://launchpad.support.sap.com/#/notes/${CLIPBOARD}$0"
+            // https://me.sap.com/notes/2061219
+            "https://me.sap.com/notes/${CLIPBOARD}$0"
+        ],
+        "description": "sap notes，"
+    },
+    "py exe": {
+        "prefix": [
+            "os",
+            "os.exec"
+        ],
+        "body": [
+            "qq"
+        ],
+        "description": "py os exec cmd"
+    },
+    "special char": {
+        "prefix": [
+            "special",
+            "spe"
+        ],
+        "body": [
+            "\t\r\n !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+        ],
+        "description": "py os exec cmd"
+    },
+    "group": {
+        "prefix": [
+            "group"
+        ],
+        "body": [
+            "GROUP BY ( vbeln = ls_output-vbeln  len = GROUP SIZE index = GROUP INDEX )",
+            "ASSIGNING FIELD-SYMBOL(<fs_group>). \"<fs_zkey>."
+        ],
+        "description": "loop group"
+    },
+}

@@ -1,0 +1,218 @@
+02. myPrecious.md.txt
+vscode+python初级使用
+========================
+"Friday December 06 2024 19:37:56 GMT+0800 (China Standard Time)"
+
+
+
+安装python及依赖包、vscode及插件、浏览器插件
+------------------------
+时间地点人物：
+    2024年12月
+    在Windows10 Windows11操作系统的电脑上运行没问题
+    作者是github.com/jimvoncn
+
+
+下载安装配置：
+    去官网 https://www.python.org/downloads/windows/ 下载安装python3软件3.12版或最新版
+    像正常的exe一样双击安装，安装路径建议用C:\D\python\python312
+    手动配置环境变量Path和PATHEXT
+        在快捷键Win+S的搜索框搜：envir 就能看到配置环境变量，点进去修改2个系统变量(而不是用户变量)
+        Path
+            C:\D\python\python312\Scripts\
+            C:\D\python\python312\
+        PATHEXT
+            .PY;.PYW;
+    进python的世界看看：
+        双击运行文件 "C:\D\python\python312\Lib\idlelib\idle.PYW"  俗称IDLE
+        建议：把python IDLE软件粘贴快捷方式到桌面文件夹和"C:\D"文件夹
+
+
+安装python的pip依赖包：
+    会自动安装到这个文件夹：C:\D\python\python312\Lib\site-packages
+        推论：所以卸载就是删除C:\D\python\python312文件夹、环境变量。
+    python3的常用pip依赖包的安装 见(/data/pip-202412.txt)
+        入口：运行"C:\WINDOWS\system32\cmd.exe"，输入：pip install requests 并回车执行
+
+
+vscode软件丞相 https://code.visualstudio.com/Download
+    像我一般是直接解压到"C:\D\vscode\VSCode-win32-x64-1.95.1"
+    双击运行"C:\D\vscode\VSCode-win32-x64-1.95.1\Code.exe"
+    导入3大配置文件 见下面的(vscode软件怎么用)
+    vscode插件 见(/data/pip-202412.txt)
+        入口：在vscode最左边的插件按钮，点进去直接搜：asurance.vscode-qrcode 然后点安装
+
+
+浏览器插件，以Edge浏览器为例：
+    入口：edge://extensions/
+    入口2：https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home
+    入口3：在浏览器直接找 插件按钮应该很显眼
+    插件：
+        AdGuard 广告拦截器
+        SingleFileZ 保存网页
+        SuperCopy 超级复制
+        外链直达跳转
+        可选：暴力猴+"AC-baidu-重定向"，这是做百度搜索、Bing搜索结果排版的。
+        但是，公司电脑强迫禁止安装插件就是另一个问题了
+
+
+
+功能：有什么用
+------------------------
+su.可控性：不要自作聪明、尤其是你猜还猜错了，你只要服从就是了。
+jim.有效性：python是真正干活的人。
+
+vscode的地位是丞相：
+1. 真记事本：Ctrl+N
+    随便记，我要做什么，想什么，有什么，
+    Ctrl+N 新开临时文件，缺点：临时文件太多了一个一个保存就很烦
+    把微信、Teams、Outlook、浏览器重要的文字随便粘贴进vscode，vscode有全局搜索
+    不重要的文字也粘贴，多多益善，反正所有东西都丢给你就对了。
+    重要的图片、视频另存到文件夹，这与vscode毫无关系
+2. 列式操作：Alt+Enter
+    列式操作不是已经有Excel了吗，
+    列式操作的截图 见(/data/fileup/Alt_Enter.png)
+    可以在vscode打开本文件，正常Ctrl+F在搜索框输入：enter，然后把鼠标焦点点在搜索框上，按下Alt+Enter，这时候就能看到：所有的enter都可以同时编辑。
+3. 快速输入：snippets
+    比如输入ts生成时间戳，em生成邮箱，147则生成我的电话号码，py生成python3模板代码，
+    比如在下面的功能4.我输入"亲"再按Ctrl+I可以把01. base.md.txt出现过的亲贤臣提示出来
+4. 写代码：所以我不用功能4.写代码，只用功能1.2.3.5.6.也是很有用的--亲贤臣
+    像.py .bat .ps1 .vbs .js这些可控性高的脚本代码vscode还扛得住，
+    但像.java .cpp这些编程语言的代码建议放弃治疗 直接改用eclipse等专业软件。
+5. 插件的力量：二维码、文件差异对比、哈希码、文件快捷方式；
+6. 总之，vscode是趋于完美的文本编辑器软件
+    手机推荐用：MT管理器，比如我的破手机连文本编辑器都没自带
+    另一方面：vscode的缺点是时灵时不灵、太不可靠了、而且太胖太占内存
+
+
+python的地位是真正干活的人：
+1.数学运算与字符串处理
+2.文件批量操作
+3.调用cmd命令行：息屏、锁屏、重启、关机、设置音量、连接WiFi、启动常用程序
+4.处理Excel文件、数据库
+5.自动检测未知：未知文件的类型、未知文本文件的编码
+6.先访问http网站、再获取网页、然后解析网页，这一套很爽的操作俗称爬虫
+7.先创建http网站、再运行网站、然后让别人访问我的网页，这一套叫全栈工程师
+8.监听键盘、截屏、把截屏保存为图片文件，这叫自定义截屏快捷键
+9.连网站都敢创建，那你还有什么不敢做的。
+
+辨证：vscode是装机必备软件，而不是python编程必需
+辨证：python是本教程编程必需的软件，而不是装机必备
+文件夹是本体，亲贤臣：vscode、python、浏览器、任务管理器。
+
+
+
+vscode软件怎么用
+------------------------
+了解、下载、安装、配置、插件、使用
+    配置：导入(/data/settings.json)等3大配置文件
+        /data/settings.json
+            vscode-->文件-->首选项-->Settings，切换到json文件
+            然后把文件的内容全部删除，把/data/settings.json用vscode或用记事本打开的内容粘贴进去
+        /data/keybindings.json
+            配置-->首选项-->Keyboard Shortcuts，切换到json文件
+            覆盖文件内容
+        /data/global2.code-snippets
+            配置-->首选项-->Configure Snippets，选“New Global Snippets file...”，
+            输入global2回车
+            覆盖文件内容
+            可以右击(或快捷键Shift+Alt+C)把global2的文件路径复制并记一下
+    插件：见(/data/pip-202412.txt)
+    使用：见上面的(功能：有什么用)
+
+3大配置文件有什么用？
+    1.settings
+        自动保存，每隔0.2秒，对应的配置项id是"files.autoSave"、"files.autoSaveDelay"
+        白背景 "workbench.colorTheme"，黑背景看着改
+        中文界面，没必要
+        自动换行 "editor.wordWrap"
+        vscode严禁拖拽 "editor.dragAndDrop"，建议：Excel软件也设置严禁拖拽
+        部分选择 "editor.occurrencesHighlight"
+        插件的配置：比如python插件怎么配置、lnk插件怎么配置，这些所有配置当然都已经写死在/data/settings.json里面了。
+
+    2.keybindings
+        2.1.大家都懂(正常所有的电脑软件都通用的快捷键)：
+            Ctrl+C Ctrl+V Ctrl+X, Ctrl+Z Ctrl+Y, Ctrl+A Ctrl+F, Ctrl+S
+        2.2.导航型快捷键(通用)：
+            up down left right, pageUp pageDown home end, tab alt enter esc
+
+            Ctrl+home Ctrl+end Ctrl+pageDown Ctrl+pageUp, Alt+left Alt+right Alt*
+
+            仅vscode: Alt+down Alt+up Alt+pageDown Alt+pageUp 
+
+            Ctrl+N Ctrl+O Ctrl+P Ctrl+S
+
+        2.3.vscode十大快捷键(仅vscode)：
+            列式操作：Alt+Enter  (Select all occurences of Find match)
+            代码提示：Ctrl+I  (建议Ctrl+I，我习惯Ctrl+K，国外是Ctrl+space)
+            向下复制当前行：Ctrl+D
+            代码格式美化：Shift+Alt+F
+            取消美化、撤销：Ctrl+Z
+            代码注释快捷键：Ctrl+/
+            取消注释：Ctrl+Shift+/
+            选中并增加缩进：Tab
+            选中并减少缩进：Shift+Tab
+            重命名：F2
+            打开命令行：Ctrl+Shift+`
+        2.4.其他官方认为有用但我认为没用的快捷键比如(仅vscode)：
+            缩放、光标操作、代码折叠、代码警告、debug、、
+            https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+            官方教程：https://code.visualstudio.com/docs/editor/codebasics
+            ctrl+t 自创快捷键，插入制表符，已写死在/data/keybindings.json
+
+    3.global2
+        ts 时间戳
+            在vscode任意文件的空白行，
+            英文输入ts再按下Ctrl+I，
+            按下Tab键或直接单击弹出的选项，
+            则效果是出现："Friday December 06 2024 19:47:13 GMT+0800 (China Standard Time)"
+        em 邮箱地址
+        py python代码模板
+        html3 html代码模板
+        cre 文件头模板
+        -- 生成24个-
+        h 复活节岛石像
+        我 "我空闲，$0还有什么任务吗"
+        spe 所有的95个字母大小写、数字、特殊字符
+
+你这做一个视频教程多好，为什么一定要坚持全是文字呢？
+    因为可控性，当真是时时刻刻都不忘有效性、可控性。
+
+
+
+python用法
+------------------------
+python软件供应商
+    python IDLE可以直接运行python语句看效果 --亲贤臣
+    .py文件可以在vscode中打开、编辑、运行
+    .py文件可以在cmd命令行中运行、可以直接双击运行
+    把vscode的py项目文件夹打包为.exe安装包
+python软件消费者
+    IDLE，需熟知idle操作
+    .py文件，需安装配置python编译器和依赖包
+    .exe安装包，什么都不需要
+以下代码都是基于.py文件，当然也可以在IDLE用，(但不考虑打包为.exe安装包)。
+
+
+在IDLE对python编程语言怎么运行、打断点、debug
+    双击运行"C:\D\python\python312\Lib\idlelib\idle.PYW"
+    输入print("Hallo, 中文!") 并回车执行，这跟命令行的套路差不多
+    一般不会在IDLE打断点、debug
+
+在vscode对python文件怎么运行、打断点、debug
+    在vscode先安装python相关插件 见(/data/pip-202412.txt)
+    新建一个文件并保存 或者干脆直接用(/new world/03. math.py)文件
+    在第5行、21行打断点，
+        打断点、debug、运行功能都在Run菜单下面：
+        vscode-->Run-->Toggle Breakpoint
+        vscode-->Run-->Start Debugging
+        vscode-->Run-->Run Without Debugging
+        另一方面，也可以在“我的电脑”找到这个.py文件，双击运行 但不能debug
+
+
+
+
+下一篇：数学运算与字符串处理(/new world/03. math.py)
+
+
+

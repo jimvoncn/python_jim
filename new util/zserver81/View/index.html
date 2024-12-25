@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--
+@Created on  : "Tuesday May 10 2022 21:10:21 GMT+0800 (China Standard Time)"
+@Author      : zorrow2017
+@Description : 文件传输
+-->
+<html lang="zh-Hans-CN">
+
+<head>
+    <title>文件传输</title>
+    <link href="new util/zserver81/View/jimvoncn.ico" rel="shortcut icon" type="image/x-icon" src="" />
+    <meta charset="UTF-8">
+
+    <!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+    <script src="new util/zserver81/View/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        /**
+         * 全局变量
+         */
+        gv_message = "";
+        go_error = "";
+
+        /**
+         * 初始化，打开网页时是否自动：1.刷新聊天框 2.开启截图
+         */
+        function sub_doInit() {
+            showMessage("jim Initial");
+            doChatBoard("refresh");
+            doGUIScreenshot(true);
+        }
+        function doChatBoard(iv_operate) {
+            var board = $("#P_inputMain");
+            var boardout = $("#P_outPublic");
+            var lo_message = $("#message");
+            var lv_old = board.val();
+            var lv_get = "", lv_result = "";
+            if (!lv_old.endsWith("\n")) {
+                lv_old = lv_old + "\n";
+            }
+            console.log(lv_old);
+
+            //
+            $.ajax({
+                type: "POST",
+                url: "/chat",
+                // async: true,
+                contentType: "application/json;charset=utf-8",
+                dataType: "text",
+                data: JSON.stringify({ "reqString": lv_old, "operate": iv_operate }),
+                beforeSend: function () {
+                },
+                success: function (sdata, status, xhr) {
+                    //var data = JSON.parse(sdata);
+                    console.log(sdata);
+                    var lv_str = "";
+                    var ls_json = JSON.parse(sdata);
+                    for (let lv_i of ls_json.allString) {
+                        lv_str += lv_i + "\n";
+                    }
+                    boardout.val(lv_str);
+                    showMessage(iv_operate + " chat 成功");
+                },
+                error: function (ex) {
+                    go_error = ex;
+                    console.log(ex);
+                    showMessage(ex.responseText);
+                }
+            });
+        }
+
+        function doGUIScreenshot(iv_isRun) {
+            var lo_open = $("#b_open");
+            var lo_close = $("#b_close");
+            var lo_message = $("#message");
+
+            // //2次按打开按钮则关闭
+            // if (lo_close.attr("disabled") == undefined && iv_isRun == true) {
+            //     iv_isRun = false;
+            // }
+
+            //
+            $.ajax({
+                type: "POST",
+                url: "/gui/openScreenshot",
+                // async: true,
+                contentType: "application/json;charset=utf-8",
+                dataType: "text",
+                data: JSON.stringify({ "iv_isRun": iv_isRun }),
+                beforeSend: function () {
+                },
+                success: function (sdata, status, xhr) {
+                    //var data = JSON.parse(sdata);
+                    console.log(sdata);
+                    var lv_str = "";
+                    var ls_json = JSON.parse(sdata);
+                    if (ls_json.type == "S") {
+                        showMessage(ls_json.message);
+                        if (iv_isRun == true) {
+                            lo_close.attr("disabled", false);
+                        } else {
+                            lo_close.attr("disabled", true);
+                        }
+                    }
+                },
+                error: function (ex) {
+                    go_error = ex;
+                    console.log(ex);
+                    showMessage(ex.toString());
+                }
+            });
+        }
+        function doGUIKeyUse() {
+            //
+            $.ajax({
+                type: "POST",
+                url: "/gui/getKeyUse",
+                // async: true,
+                contentType: "application/json;charset=utf-8",
+                dataType: "text",
+                data: null,
+                beforeSend: function () {
+                },
+                success: function (sdata, status, xhr) {
+                    //var data = JSON.parse(sdata);
+                    console.log(sdata);
+                    var lv_str = "";
+                    showMessage("键盘频率get成功");
+                    $("#P_outPublic").val(sdata);
+                },
+                error: function (ex) {
+                    go_error = ex;
+                    console.log(ex);
+                    showMessage(ex.toString());
+                }
+            });
+        }
+        function doHash() {
+            var lv_file = $("#P_inputMain").val();
+            //文件名去掉前后双引号
+            lv_file = lv_file.replace(/^[\s"]+/g, "");
+            lv_file = lv_file.replace(/[\s"]+$/g, "");
+            var lv_hash = "sha256";
+            //
+            $.ajax({
+                type: "POST",
+                url: "/ajax/getHash",
+                // async: true,
+                contentType: "application/json;charset=utf-8",
+                dataType: "text",
+                data: JSON.stringify({ "iv_file": lv_file, "iv_hash": lv_hash }),
+                beforeSend: function () {
+                },
+                success: function (sdata, status, xhr) {
+                    //var data = JSON.parse(sdata);
+                    console.log(sdata);
+                    var lv_str = "";
+                    showMessage("hash get成功");
+                    $("#P_outPublic").val(sdata);
+                },
+                error: function (ex) {
+                    go_error = ex;
+                    console.log(ex);
+                    showMessage(ex.responseText);
+                }
+            });
+        }
+        function doEnc() {
+            var lv_data = $("#P_inputMain").val();
+            var lv_key = $("#P_out2").val();
+            if (lv_key.length == 0) {
+                lv_key = "密码是密码支持中文";
+                $("#P_out2").val(lv_key);
+            }
+            //
+            $.ajax({
+                type: "POST",
+                url: "/ajax/doEnc",
+                // async: true,
+                contentType: "application/json;charset=utf-8",
+                dataType: "text",
+                data: JSON.stringify({ "iv_key": lv_key, "iv_data": lv_data }),
+                beforeSend: function () {
+                },
+                success: function (sdata, status, xhr) {
+                    //var data = JSON.parse(sdata);
+                    console.log(sdata);
+                    var lv_str = "";
+                    showMessage("加密成功");
+                    $("#P_outPublic").val(sdata);
+                },
+                error: function (ex) {
+                    go_error = ex;
+                    console.log(ex);
+                    showMessage(ex.responseText);
+                }
+            });
+        }
+        function doDec() {
+            var lv_data = $("#P_inputMain").val();
+            var lv_key = $("#P_out2").val();
+            if (lv_key.length == 0) {
+                lv_key = "密码是密码支持中文";
+                $("#P_out2").val(lv_key);
+            }
+            //
+            $.ajax({
+                type: "POST",
+                url: "/ajax/doDec",
+                // async: true,
+                contentType: "application/json;charset=utf-8",
+                dataType: "text",
+                data: JSON.stringify({ "iv_key": lv_key, "iv_data": lv_data }),
+                beforeSend: function () {
+                },
+                success: function (sdata, status, xhr) {
+                    //var data = JSON.parse(sdata);
+                    console.log(sdata);
+                    var lv_str = "";
+                    showMessage("解密没报错，解密结果见大输出框");
+                    $("#P_outPublic").val(sdata);
+                },
+                error: function (ex) {
+                    go_error = ex;
+                    console.log(ex);
+                    showMessage(ex.responseText);
+                }
+            });
+        }
+        function showMessage(iv_msg = null) {
+            var boardout = $("#P_outPublic");
+            var lo_message = $("#message");
+            if (iv_msg == null) {
+            } else {
+                gv_message = iv_msg;
+            }
+            lo_message.text(gv_message);
+        }
+        function detailMessage() {
+            var boardout = $("#P_outPublic");
+            var lo_message = $("#message");
+            boardout.val(gv_message);
+        }
+        function copyBlock(parid) {
+            //取 $('#parid').child('pre').first();
+            var par = document.getElementById(parid);
+            var txt = par.innerText;
+
+            // 创建元素用于复制
+            // const aux = document.createElement('textarea');
+            const aux = document.getElementById("clipboard");
+            // 获取复制内容
+            // const content = txt;//'qqq'
+            // 设置元素内容
+            // aux.setAttribute('value', content);
+            aux.value = txt;
+            // 将元素插入页面进行调用
+            //  document.body.appendChild(aux);
+            // 复制内容
+            aux.select();
+            // 将内容复制到剪贴板
+            document.execCommand("copy");
+            // // 删除创建元素
+            // document.body.removeChild(aux);
+        }
+        function doGetTime() {
+            var lv_str = (new Date()).toString();
+            $("#P_outPublic").val(lv_str);
+        }
+    </script>
+
+    <style type="text/css">
+        #P_inputMain {
+            width: 50%;
+            height: 60px;
+            border: solid 1px green;
+        }
+
+        #P_outPublic {
+            display: inline-block;
+            width: 80%;
+            height: 400px;
+        }
+
+        #P_out2 {
+            display: inline-block;
+            width: 18%;
+            height: 100px;
+        }
+
+        main {
+            margin: 0 1% 4% 1%;
+        }
+
+        footer {
+            position: fixed;
+            top: 97%;
+            border: solid 2px rgba(0, 0, 255, 10%);
+            background-color: white;
+            margin: 0 1% 0 0.1%;
+            width: 96%;
+        }
+    </style>
+
+    <meta name="description" content="文件传输">
+    <meta name="keywords" content="temp" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="sub_doInit()">
+    <main>
+        <mark><a href="">refresh</a></mark><br />
+
+        <section>
+            <ol class="fileup_main_ol"></ol><br />
+
+            <form method="post" enctype="multipart/form-data" action="/fileup?up=qq">
+                <!-- form里面只能有一个<input； -->
+                File chose: <input type="file" name="fileup" required />
+                <button type="submit">commit</button>
+                文件上传
+                <br />
+            </form>
+            <br />
+        </section>
+
+
+        <section>
+            主输入框:
+            <button type="button" onclick="doChatBoard('chat')" title="把主输入框内容增加到聊天记录">append</button>
+            <button type="button" onclick="doHash()" title="在主输入框输入文件路径，输出此文件的sha256哈希值">SHA256</button>
+            <button type="button" onclick="doEnc()" title="把主输入框内容加密(密码请手动输入到小输出框)">加密</button>
+            <button type="button" onclick="doDec()" title="密码请手动粘贴到小输出框">解密</button>
+            <br />
+            <textarea id="P_inputMain" placeholder="主输入框: TODO say something" title="主输入框"></textarea>
+            <button type="button" title="跟append按钮一样" onclick="doChatBoard('chat')">Send</button>
+            <br />
+
+            聊天记录框、大输出框、主输出框:
+            <button type="button" onclick="doChatBoard('refresh')" title="刷新聊天记录">refresh &circlearrowleft; </button>
+            <button type="button" onclick="doChatBoard('clear')" title="【请先备份chat.txt】强行清空之前的全部聊天记录">delete all</button>
+            <br />
+            <textarea id="P_outPublic" placeholder="全局聊天室，还没人发言" title="主输出框"></textarea>
+
+            <textarea id="P_out2" placeholder="输出框2号、小输出框" title="输出框2号、小输出框"></textarea>
+            <br />
+            <br />
+        </section>
+
+
+
+        <section>
+            广告：<br />
+
+            <div>
+                1.<a href="https://code.visualstudio.com/Download" target="_blank">vscode</a>
+                匠心独造，你值得拥有
+            </div>
+
+            <div>
+                2.<a href="https://gitee.com/jimvoncn/nplz" target="_blank">nplz</a>
+                名人传记，法国大革命
+            </div>
+
+            <div>
+                3.<a href="https://gitee.com/jimvoncn/python_jim" target="_blank">python_jim</a>
+                最现代的新思维，自己给自己打广告 --又在骗人学编程
+            </div>
+
+        </section>
+        <br />
+        <br />
+
+
+        <section>
+            <button type="button" onclick="doGUIScreenshot(true)" id="b_open"
+                title="须依赖包、仅在Windows试过、可能要手动改文件夹">打开截图服务</button>
+            <button type="button" onclick="doGUIScreenshot(false)" id="b_close" disabled>关闭截图服务</button>
+            <button type="button" onclick="doGUIKeyUse()" title="通过开启zprintScreen监听键盘服务，获取键盘按键频率">统计键盘频率</button>
+            <br />
+
+            <button type="button" onclick="doGetTime()">当前时间</button>
+            <br />
+
+            尚未实现：二维码、文本差异对比、超链接url处理、加密、、
+            <br />
+            所以：现在只有文件、文字、截图这3大核心功能
+            <br />
+
+            剪切板文本框：<textarea id="clipboard"></textarea>
+        </section>
+    </main>
+
+    <footer>
+        <button type="button" onclick="detailMessage()" title="显示反馈消息的详细内容">#反馈消息</button>
+        <button type="button" onclick="copyBlock('message')" title="复制反馈消息">🗊copy</button>
+        <label id="message" title="反馈消息框">null</label>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+z01_newUtil.md.txt
+python真正干活的实用脚本代码
+========================
+"Thursday December 19 2024 19:09:49 GMT+0800 (China Standard Time)"
+
+
+
+脚本与软件的对立统一：
+    软件是用python、C++等编程语言从零到一创造的独立的软件
+    脚本是用python、JS 等脚本语言写的脚本，只能在现成的软件譬如Excel.exe里运行
+
+    软件技术-编程语言：
+        Java开发创造的著名软件有：谷歌地图、PyCharm、Android、、
+        C++开发创造的著名软件有：正常的电脑软件都是C/C++做的。
+        Python开发创造的著名软件有：没有纯python的?，所以Python不过如此
+
+    脚本技术-脚本语言：
+        1.基于操作系统的脚本-powershell、cmd、bash命令行
+            门槛：无门槛
+            入口：双击/new util/script文件夹的.bat文件运行
+            doBlack.bat 息屏
+            doClose.bat 锁屏
+            doInit.bat 开机启动和关闭
+            doPyClickScreen.bat 永不锁屏
+            doPyDelayScreen.bat 延时锁屏
+            doRestart.bat 重启
+            doShutdown.bat
+            doWifi.bat
+        2.基于Excel软件的脚本-VBA  但是：我会python
+            入口：Excel-->View-->Macros-->View Macros-->输入qq-->Create、粘贴Sub代码、Run
+            excelHome.vba 所有Sheet页移动到A1单元格
+            excelInsert.vba 连续插入几十个空行
+        3.基于浏览器软件的脚本-JavaScript
+            门槛：互联网全栈工程师
+            入口：在浏览器按F12键、或Fn+F12进入debug开发者界面，Console控制台，粘贴js代码回车执行
+            htmlText.js 获取不让复制的文本
+        4.基于SAP ERP软件的脚本-ABAP
+            门槛：大型企业
+        5.python万能脚本，万能就是无能、通用就是没用
+            门槛：程序员
+
+
+
+Python3.12 既是编程语言又是脚本语言，可控性很强
+    3.12是python3的版本号，python2是老古董 经常会搜到老的网页
+    /new util/script/  非python脚本
+    /new util/zserver81/  python编程语言写的本地网站
+    z02_file.py  文件工具类，尚未实现
+    z03_excel.py  尚未实现
+    z04_  尚未实现
+    z05_pytorch.py  人工智能-机器学习
+
+
+
+下一篇：ZServer81 的开发历程(/jim.txt)
+
+
