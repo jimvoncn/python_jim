@@ -54,7 +54,7 @@ python_jim/  "C:\E\code\python_jim"文件夹
 ```
 [2024-11-29] Jim 初始化python_jim文件夹
 [2024-12-25] Jim 第一次发布到github、gitee
-[2024-12-25] Jim 标注应该重点文件
+[2024-12-25] Jim 标注一个重点文件
 
 ```
 
